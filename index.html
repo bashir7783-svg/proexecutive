@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Md. Bashir Ahamed - Portfolio</title>
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="portfolio-container">
+        
+        <!-- Header Banner -->
+        <div class="banner">
+            <div class="profile-pic-container">
+                <!-- Placeholder for profile image -->
+                <img src="images/darjeling.jpg" alt="Profile Picture" class="profile-pic">
+                <div class="edit-icon"><i class="fas fa-cog"></i></div>
+            </div>
+        </div>
+
+        <!-- Profile Info -->
+        <div class="profile-info">
+            <h1>Md. Bashir Ahamed <i class="fas fa-check-circle verified"></i></h1>
+            <p>Executive Programmer</p>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-github"></i></a>
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+            </div>
+        </div>
+
+        <!-- Stats -->
+        <div class="stats-container">
+            <div class="stat-box">
+                <i class="fas fa-folder stat-icon blue"></i>
+                <h3>12</h3>
+                <p>Projects</p>
+            </div>
+            <div class="stat-box">
+                <i class="fas fa-users stat-icon cyan"></i>
+                <h3>5.2K</h3>
+                <p>Followers</p>
+            </div>
+            <div class="stat-box">
+                <i class="fas fa-heart stat-icon red"></i>
+                <h3>1.8K</h3>
+                <p>Likes</p>
+            </div>
+        </div>
+
+        <!-- Edit Profile Form (Static) -->
+        <div class="section-card">
+            <h2><i class="fas fa-edit"></i> Edit Profile</h2>
+            <div class="form-row">
+                <div class="input-group">
+                    <label>Full Name</label>
+                    <input type="text" value="Md. Bashir Ahamed" readonly>
+                </div>
+                <div class="input-group">
+                    <label>Email Address</label>
+                    <input type="email" value="bashir7783@gmail.com" readonly>
+                </div>
+            </div>
+            <div class="input-group">
+                <label>Bio</label>
+                <input type="text" value="Executive Programmer | Tech Enthusiast" readonly>
+            </div>
+            <button class="save-btn"><i class="fas fa-save"></i> Save Changes</button>
+        </div>
+
+        <!-- Skills -->
+        <div class="section-card">
+            <h2><i class="fas fa-code"></i> Skills</h2>
+            <div class="skills-tags">
+                <span>HTML</span>
+                <span>CSS</span>
+                <span>JavaScript</span>
+                <span>React</span>
+                <span>Node.js</span>
+            </div>
+        </div>
+
+        <!-- My Projects -->
+        <div class="section-card">
+            <h2><i class="fas fa-briefcase"></i> My Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <img src="https://via.placeholder.com/150x100/1a1a2e/ffffff?text=Laptop" alt="Project 1">
+                    <p>Portfolio Website <i class="fas fa-arrow-right"></i></p>
+                </div>
+                <div class="project-card">
+                    <img src="https://via.placeholder.com/150x100/1a1a2e/ffffff?text=Dashboard" alt="Project 2">
+                    <p>Dashboard App <i class="fas fa-arrow-right"></i></p>
+                </div>
+                <div class="project-card">
+                    <img src="https://via.placeholder.com/150x100/1a1a2e/ffffff?text=Game" alt="Project 3">
+                    <p>Game Project <i class="fas fa-arrow-right"></i></p>
+                </div>
+            </div>
+        </div>
+
+        <!-- NEW: Learning Web Development Form (Google Sheets Integration) -->
+        <div class="section-card highlight-card">
+            <h2><i class="fas fa-graduation-cap"></i> Start Learning Web Development</h2>
+            <p class="form-desc">Fill out this form to get started. Your information will be saved to our database.</p>
+            
+            <!-- IMPORTANT: Replace the action URL with your Google Apps Script Web App URL -->
+            <form id="learningForm" action="YOUR_GOOGLE_SCRIPT_URL_HERE" method="POST" target="hidden_iframe" onsubmit="submitted=true;">
+                <div class="input-group">
+                    <label>Full Name</label>
+                    <input type="text" name="fullName" placeholder="Enter your full name" required>
+                </div>
+                <div class="input-group">
+                    <label>Email Address</label>
+                    <input type="email" name="email" placeholder="Enter your email" required>
+                </div>
+                <div class="input-group">
+                    <label>What do you want to learn?</label>
+                    <input type="text" name="learningGoal" placeholder="e.g., Frontend, Backend, Full Stack" required>
+                </div>
+                <button type="submit" class="submit-btn"><i class="fas fa-paper-plane"></i> Submit Request</button>
+            </form>
+            <div id="formMessage" class="success-message" style="display: none;">
+                <i class="fas fa-check-circle"></i> Thank you! Your information has been submitted successfully.
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Hidden iframe to prevent page reload on form submit -->
+    <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="if(submitted) { showSuccess(); }"></iframe>
+
+    <script src="script.js"></script>
+</body>
+</html>
